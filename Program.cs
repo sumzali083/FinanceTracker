@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace FinanceTracker
+{
+    class Program
+    {
+        static void Main()
+        {
+            // code here
+            Transaction transaction = new Transaction();
+            transaction.Balance();
+        }
+    }
+}
