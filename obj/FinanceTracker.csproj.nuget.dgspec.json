@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj": {}
+    "c:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj": {
+    "c:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj",
+        "projectUniqueName": "c:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj",
         "projectName": "FinanceTracker",
-        "projectPath": "C:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj",
+        "projectPath": "c:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\FinanceTracker.csproj",
         "packagesPath": "C:\\Users\\summe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\obj\\",
+        "outputPath": "c:\\Users\\summe\\OneDrive - Aston University\\Desktop\\FinanceTracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

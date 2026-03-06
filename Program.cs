@@ -5,7 +5,13 @@
         static void Main()
         {
             // code here
-            Transaction transaction = new Transaction();
+            FinanceTracker tracker = new FinanceTracker();
+            tracker.addIncome(100);
+            tracker.addIncome(50);
+
+            decimal balance =  tracker.getBalance();
+
+            Console.WriteLine(balance);
         }
     }
 }

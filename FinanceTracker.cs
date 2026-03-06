@@ -1,6 +1,6 @@
 namespace FinanceTracker;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+
 
 public class FinanceTracker
 {
@@ -14,5 +14,15 @@ public class FinanceTracker
         t.Date = DateTime.Now;
         transactions.Add(t);
 
+    }
+
+    public decimal getBalance()
+    {
+       decimal balance = 0;
+       foreach (Transaction t in transactions){
+            balance += t.Amount;
+
+        }
+        return balance;
     }
 }
