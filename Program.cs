@@ -6,7 +6,6 @@
         {
             // code here
             Transaction transaction = new Transaction();
-            transaction.Balance();
         }
     }
 }
