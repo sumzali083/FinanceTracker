@@ -33,4 +33,16 @@ public class FinanceTracker
         t.Date = DateTime.Now;
         transactions.Add(t);
     }
+
+    public void allTransaction()
+    {
+        
+        foreach (Transaction t in transactions)
+        {
+            Console.WriteLine("amount is "+ t.Amount + "date was" + t.Date);
+
+        }
+
+
+    }
 }

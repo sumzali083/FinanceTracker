@@ -10,13 +10,11 @@ namespace FinanceTracker
             FinanceTracker tracker = new FinanceTracker();
             //tracker.addIncome(100);
             //tracker.addIncome(50);
-
             //Console.WriteLine(balance);
-
             //starting the menu
             while(true){
             //loopig though the menue 
-            Console.WriteLine("Type 1 for adding income \nType 2 for adding expenses \nType 3 to show balance \nType 4 to exit");
+            Console.WriteLine("Type 1 for adding income \nType 2 for adding expenses \nType 3 to show balance \nType 4 to view history\nType 5 to exit");
             //finding the option
             int menuSelection = int.Parse(Console.ReadLine());
             //read line
@@ -41,6 +39,9 @@ namespace FinanceTracker
                 Console.WriteLine("your balance is " + balance);
                 break;
              case 4:
+                tracker.allTransaction();
+                break;
+             case 5:
                 return;
                 
             
