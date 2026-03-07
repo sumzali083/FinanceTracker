@@ -25,4 +25,12 @@ public class FinanceTracker
         }
         return balance;
     }
+
+    public void addExpense(decimal Amount)
+    {
+        Transaction t = new Transaction();
+        t.Amount = -Amount;
+        t.Date = DateTime.Now;
+        transactions.Add(t);
+    }
 }
