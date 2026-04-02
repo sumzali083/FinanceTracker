@@ -44,7 +44,7 @@ List<Transaction> transactions = new()
         Type = "Expense"
     }
 };
-
+//Get
 app.MapGet("/transactions", () =>
 {
     return transactions;
@@ -60,5 +60,16 @@ app.MapGet("/stocks/{symbol}", (string symbol) =>
 
     return Results.Content(json, "application/json");
 });
+
+//POST
+app.MapPost("/transactions" , (Transaction transaction) =>
+{
+    transactions.Add(transaction);
+    return Results.Created($"/transactions/{transaction.Id}", transaction);
+
+}); 
+
+//PUT
+
 
 app.Run();
