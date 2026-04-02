@@ -3,6 +3,15 @@ using FinanceTracker.Api.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -12,6 +21,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 
 List<Transaction> transactions = new()
 {
@@ -39,7 +49,6 @@ app.MapGet("/transactions", () =>
 {
     return transactions;
 });
-
 app.MapGet("/stocks/{symbol}", (string symbol) =>
 {
     var path = $"stocks/{symbol}.json";
@@ -51,4 +60,5 @@ app.MapGet("/stocks/{symbol}", (string symbol) =>
 
     return Results.Content(json, "application/json");
 });
+
 app.Run();
