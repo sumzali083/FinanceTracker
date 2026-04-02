@@ -40,4 +40,15 @@ app.MapGet("/transactions", () =>
     return transactions;
 });
 
+app.MapGet("/stocks/{symbol}", (string symbol) =>
+{
+    var path = $"stocks/{symbol}.json";
+
+    if (!File.Exists(path))
+        return Results.NotFound("Stock not found");
+
+    var json = File.ReadAllText(path);
+
+    return Results.Content(json, "application/json");
+});
 app.Run();

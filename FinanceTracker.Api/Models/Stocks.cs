@@ -1,21 +1,33 @@
+using System.Text.Json.Serialization;
 
+namespace FinanceTracker.Api.Models;
 
-    var path = $"stocks/{symbol}.json";
+public class Stock
+{
+    [JsonPropertyName("symbol")]
+    public string Symbol { get; set; } = string.Empty;
 
-    if (!File.Exists(path))
-        return Results.NotFound("Stock not found");
+    [JsonPropertyName("price")]
+    public string Price { get; set; } = string.Empty;
 
-    var json = File.ReadAllText(path);
+    [JsonPropertyName("Previous close")]
+    public string PreviousClose { get; set; } = string.Empty;
 
-    return Results.Content(json, "application/json");
+    [JsonPropertyName("Day range")]
+    public string DayRange { get; set; } = string.Empty;
 
-    var path = $"stocks/{symbol}.json";
+    [JsonPropertyName("Year range")]
+    public string YearRange { get; set; } = string.Empty;
 
-    if (!File.Exists(path))
-        return Results.NotFound("Stock not found");
+    [JsonPropertyName("Market cap")]
+    public string MarketCap { get; set; } = string.Empty;
 
-    var json = File.ReadAllText(path);
+    [JsonPropertyName("Avg Volume")]
+    public string AvgVolume { get; set; } = string.Empty;
 
-    // For now just return the whole file again
-    return Results.Content(json, "application/json");
+    [JsonPropertyName("P/E ratio")]
+    public string PERatio { get; set; } = string.Empty;
 
+    [JsonPropertyName("Dividend yield")]
+    public string DividendYield { get; set; } = string.Empty;
+}
