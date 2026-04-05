@@ -1,2 +1,17 @@
 bin/
 obj/
+nodemodules/
+dist/
+*.log
+*.tmp
+*.bak
+.DS_Store
+*.swp
+*.swo
+*.swn
+package-lock.json
+package.json
+yarn.lock
+.env
+.idea/
+.vscode/
