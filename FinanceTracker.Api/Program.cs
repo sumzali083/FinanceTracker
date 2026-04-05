@@ -70,6 +70,33 @@ app.MapPost("/transactions" , (Transaction transaction) =>
 }); 
 
 //PUT
+app.MapPut("/transactions/{id}", (int id, Transaction transaction) =>
+{
+    var existing = transactions.FirstOrDefault(t => t.Id == id);
 
+    if (existing is null)
+        return Results.NotFound("Transaction not found");
+
+    existing.Amount = transaction.Amount;
+    existing.Category = transaction.Category;
+    existing.Description = transaction.Description;
+    existing.Date = transaction.Date;
+    existing.Type = transaction.Type;
+
+    return Results.Ok(existing);
+});
+
+//DELETE
+app.MapDelete("/transactions/{id}", (int id) =>
+{
+    var existing = transactions.FirstOrDefault(t => t.Id == id);
+
+    if (existing is null)
+        return Results.NotFound("Transaction not found");
+
+    transactions.Remove(existing);
+
+    return Results.NoContent();
+});
 
 app.Run();
