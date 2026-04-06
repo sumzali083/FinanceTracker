@@ -1,132 +1,93 @@
-# Finance Tracker (C# Console Application)
+# FinanceTracker
 
-A simple personal finance tracker built in C#.
-This console application allows users to record income and expenses, calculate their balance, and view all transactions.
+A full-stack personal finance dashboard built with C# (.NET) and React. Track your income, expenses, and stock portfolio in one clean interface.
 
-The project was built to practice object-oriented programming concepts such as classes, lists, methods, and program structure in C#.
+<img width="1810" height="759" alt="image" src="https://github.com/user-attachments/assets/036e7b82-1db8-4e42-8940-4ba3fba571aa" />
 
----
 
 ## Features
 
-* Add income
-* Add expenses
-* Automatically calculate balance
-* View all transactions with amount and date
-* Interactive console menu
-* Transaction history stored during runtime
+- **Dashboard overview** — see your balance, total income, and total expenses at a glance
+- **Transaction management** — add, edit, and delete income and expense transactions
+- **Stock lookup** — fetch live-style stock data by symbol (AAPL, NVDA, PLTR)
+- **Clean dark UI** — modern, responsive design built with React
+- **RESTful API** — fully featured backend with CRUD operations
 
----
+## Tech Stack
 
-## How It Works
+**Backend**
+- C# / .NET 10
+- ASP.NET Core Minimal API
+- CORS enabled for frontend communication
 
-The program uses three main components:
+**Frontend**
+- React
+- JavaScript
+- CSS
 
-### Transaction Class
+**Other**
+- Docker support
+- JSON-based stock data storage
 
-Represents a single financial transaction.
+## Project Structure
+FinanceTracker/
+├── FinanceTracker.Api/      # C# backend (ASP.NET minimal API)
+│   ├── Models/              # Transaction and Stock models
+│   ├── Program.cs           # API endpoints and configuration
+│   └── stocks/              # JSON stock data files
+├── frontend/                # React frontend
+│   ├── src/                 # React components
+│   └── public/              # Static assets
+└── Dockerfile               # Container setup
 
-Each transaction stores:
+## API Endpoints
 
-* Amount
-* Date
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/transactions` | Get all transactions |
+| POST | `/transactions` | Create a new transaction |
+| PUT | `/transactions/{id}` | Update an existing transaction |
+| DELETE | `/transactions/{id}` | Delete a transaction |
+| GET | `/stocks/{symbol}` | Get stock data by symbol |
 
-Income values are stored as positive numbers, while expenses are stored as negative numbers.
+## Getting Started
 
----
+### Prerequisites
+- .NET 10 SDK
+- Node.js and npm
+- Git
 
-### FinanceTracker Class
-
-Handles all financial logic.
-
-Responsibilities:
-
-* Store transactions in a list
-* Add income
-* Add expenses
-* Calculate the current balance
-* Display all transactions
-
----
-
-### Program Class
-
-Handles the user interface and menu system.
-
-The user interacts with a console menu to perform actions such as:
-
-* Adding income
-* Adding expenses
-* Viewing balance
-* Viewing all transactions
-* Exiting the application
-
----
-
-## Menu Options
-
-When the program runs, users see the following menu:
-
-1. Add income
-2. Add expense
-3. Show balance
-4. Show all transactions
-5. Exit
-
-The program loops continuously until the user selects the exit option.
-
----
-
-## Example Usage
-
-```
-Type 1 for adding income
-Type 2 for adding expenses
-Type 3 to show balance
-Type 4 to show all transactions
-Type 5 to exit
+### Running the backend
+```bash
+cd FinanceTracker.Api
+dotnet run
 ```
 
-Example output:
+The API will start on `http://localhost:5XXX` (check your launch settings).
 
-```
-add your income here
-100
-
-you added 100 to your income
-
-your balance is 100
+### Running the frontend
+```bash
+cd frontend
+npm install
+npm start
 ```
 
----
+The React app will open at `http://localhost:3000`.
 
-## Concepts Practiced
+## What I Learned
 
-This project demonstrates:
+This project was built as a learning exercise to combine backend and frontend development. Key takeaways:
 
-* Object-Oriented Programming
-* Classes and Methods
-* Lists and Collections
-* Loops
-* Switch Statements
-* User Input Handling
-* Basic Program Architecture
-
----
+- Building RESTful APIs with ASP.NET minimal API
+- Configuring CORS for cross-origin communication
+- Connecting a React frontend to a C# backend
+- Managing state and data fetching in React
+- Structuring a full-stack project
 
 ## Future Improvements
 
-Possible improvements for the project:
-
-* Add transaction categories (Food, Rent, Salary, etc.)
-* Add transaction descriptions
-* Save transactions to a file (JSON or database)
-* Load previous transactions when the program starts
-* Add monthly summaries
-* Create a graphical user interface
-
----
-
-## Author
-
-Created as a C# learning project to practice building structured console applications and working with financial data.
+- Add a database (SQLite or SQL Server) instead of in-memory storage
+- Implement user authentication
+- Add charts for spending breakdown by category
+- Build a budget goals feature
+- Connect to a real stock API for live data
